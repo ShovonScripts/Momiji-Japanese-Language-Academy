@@ -1679,3 +1679,10 @@ footer {
         padding: 30px;
     }
 }
+/* --- Marquee Testimonials --- */
+.marquee-wrapper { overflow: hidden; position: relative; width: 100%; padding: 20px 0; }
+.marquee-content { display: flex; gap: 30px; width: max-content; animation: scroll-marquee 40s linear infinite; }
+.marquee-content:hover { animation-play-state: paused; }
+.marquee-content > * { flex-shrink: 0; width: 350px; }
+@keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 15px)); } }
+@media (max-width: 768px) { .marquee-content > * { width: 300px; } }

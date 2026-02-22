@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for contacting Momiji Japanese Language Academy.">
+    <title>Thank You | Momiji Japanese Language Academy - Dhaka</title>
+    <link rel="icon" type="image/png" href="assets/images/fav.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP (for animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Theme Check -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-leaf"></div>
+    </div>
+
+    <!-- NAVIGATION (shared) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Momiji Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i>Home</a>
+                <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i>About</a>
+                <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i>Courses</a>
+                <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i>Study in
+                    Japan</a>
+                <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i>Guidance</a>
+                <a href="contact.html" data-en="Contact" data-ja="お問い合わせ" class="btn-nav btn btn-primary btn-sm"><i
+                        class="fas fa-envelope"></i>Contact</a>
+                <div class="nav-controls">
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="icon-sun"><i class="fas fa-sun"></i></span>
+                    </button>
+                    <button id="langToggle" aria-label="Toggle Language">
+                        <span class="lang-text">JP</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="assets/images/logo.png" alt="Momiji Logo" style="height: 40px;">
+            <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i> About</a>
+            <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i> Courses</a>
+            <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i> Study in
+                Japan</a>
+            <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i> Guidance</a>
+            <a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            </button>
+            <button id="mobileLangToggle" class="mobile-lang-btn">
+                <span class="lang-text">JP</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <section class="section"
+            style="min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 150px;">
+            <div class="container fade-up">
+                <div style="font-size: 5rem; color: var(--primary); margin-bottom: 20px;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px;" data-en="Thank You!"
+                    data-ja="ありがとうございます！">
+                    Thank You!
+                </h1>
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: var(--text-muted);"
+                    data-en="We have received your message and will get back to you within 24 hours."
+                    data-ja="メッセージを受け取りました。24時間以内に返信いたします。">
+                    We have received your message and will get back to you within 24 hours.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <a href="index.html" class="btn btn-primary btn-lg" data-en="Back to Home" data-ja="ホームに戻る">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                    <a href="courses.html" class="btn btn-secondary btn-lg" data-en="View Courses" data-ja="コースを見る">
+                        <i class="fas fa-book"></i> View Courses
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (same as other pages) -->
+    <footer>
+        <div
+            style="height: 4px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), var(--primary), transparent); width: 100%;">
+        </div>
+        <div class="container" style="padding: 60px 0 40px;">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Momiji Logo"></div>
+                    <p data-en="Your trusted gateway to Japanese language education and Japan study opportunities."
+                        data-ja="日本語教育と日本留学への信頼できる架け橋。">Your trusted gateway to Japanese language education and Japan
+                        study opportunities.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Quick Links" data-ja="クイックリンク"><i class="fas fa-link"></i> Quick
+                        Links</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="About Us" data-ja="Momijiについて"><i
+                                    class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-chevron-right"></i>
+                                Courses</a></li>
+                        <li><a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i
+                                    class="fas fa-chevron-right"></i> Study in Japan</a></li>
+                        <li><a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i
+                                    class="fas fa-chevron-right"></i> Guidance</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i
+                                    class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-address-book"></i>
+                        Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dhaka, Bangladesh"
+                            data-ja="バングラデシュ、ダッカ">Dhaka, Bangladesh</span></p>
+                    <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@momijiedu.com</p>
+                    <p><i class="fas fa-globe"></i> www.momijiedu.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Hours" data-ja="営業時間"><i class="fas fa-clock"></i> Hours</h4>
+                    <p><i class="far fa-clock"></i> <span data-en="10:00 AM – 6:00 PM" data-ja="午前10時～午後6時">10:00 AM –
+                            6:00 PM</span></p>
+                    <p><i class="far fa-calendar"></i> <span data-en="Saturday - Thursday" data-ja="土曜日～木曜日">Saturday -
+                            Thursday</span></p>
+                    <p><i class="fas fa-hourglass-half"></i> <span data-en="Friday Closed" data-ja="金曜日休校">Friday
+                            Closed</span></p>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <span><i class="fas fa-certificate"></i> <span data-en="Registered Institute" data-ja="登録機関">Registered
+                        Institute</span></span>
+                <span><i class="fas fa-language"></i> <span data-en="JLPT Preparation Center" data-ja="JLPT準備センター">JLPT
+                        Preparation Center</span></span>
+                <span><i class="fas fa-handshake"></i> <span data-en="Ethical Guidance" data-ja="倫理的指導">Ethical
+                        Guidance</span></span>
+            </div>
+            <div class="footer-bottom"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: none; padding-top: 20px;">
+                <div>
+                    <p style="margin:0;"><i class="far fa-copyright"></i> <span
+                            data-en="2026 Momiji Japanese Language Academy. All rights reserved."
+                            data-ja="2026 Momiji Japanese Language Academy. All rights reserved.">2026 Momiji Japanese
+                            Language Academy. All rights reserved.</span></p>
+                </div>
+                <div>
+                    <a href="https://prodo.top" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--text-muted); text-decoration: none; font-size:0.9rem; display:flex; align-items:center; gap:5px;">
+                        <span data-en="Crafted by" data-ja="制作">Crafted by</span>
+                        <strong style="color: var(--primary);">ProDo</strong>
+                        <i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        // Fade-up observer
+        document.addEventListener('DOMContentLoaded', function () {
+            const faders = document.querySelectorAll('.fade-up');
+            const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+            const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+    </script>
+    <!-- fallback for missing images -->
+    <style>
+        img[src=""],
+        img:not([src]) {
+            opacity: 0;
+        }
+    </style>
+</body>
+
+</html>

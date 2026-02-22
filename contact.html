@@ -424,13 +424,43 @@
             }, appearOptions);
             faders.forEach(fader => appearOnScroll.observe(fader));
 
-            // Simple form handling (prevent default and alert)
+            // Form handling
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
+                contactForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
-                    alert('Thank you for contacting Momiji! We will reply within 24 hours. (Demo mode)');
-                    contactForm.reset();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    try {
+                        const formData = new FormData(this);
+                        const response = await fetch('send_email.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            // Redirect to thank you page
+                            window.location.href = 'thank-you.html';
+                        } else {
+                            // Show error message
+                            alert(result.message || 'An error occurred. Please try again later.');
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('A network error occurred. Please try again later. Ensure you are running on a PHP server.');
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }
                 });
             }
         });
