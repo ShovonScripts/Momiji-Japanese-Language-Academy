@@ -28,9 +28,9 @@
     --font-jp: 'Noto Sans JP', sans-serif;
 
     /* Animations */
-    --transition-fast: 0.3s ease;
-    --transition-base: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    --transition-slow: 0.6s ease;
+    --transition-fast: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-base: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-slow: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* Dark Mode Variables */
@@ -231,8 +231,8 @@ img {
 
 .btn-primary:hover {
     background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(145, 46, 49, 0.3);
 }
 
 .btn-secondary {
@@ -244,7 +244,8 @@ img {
 .btn-secondary:hover {
     background-color: var(--text-main);
     color: var(--bg-body);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .theme-bg-dark .btn-secondary {
@@ -339,17 +340,18 @@ img {
     font-weight: 500;
     position: relative;
     font-size: 0.95rem;
+    padding-bottom: 5px;
 }
 
 .nav-links a:not(.btn-nav)::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
     background-color: var(--accent);
-    transition: width var(--transition-fast);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .nav-links a:not(.btn-nav):hover::after,
@@ -1397,14 +1399,16 @@ footer {
 /* Animation Classes */
 .animate-hero {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.8s ease forwards;
+    transform: translateY(40px);
+    animation: fadeUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    will-change: transform, opacity;
 }
 
 .fade-up {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform, opacity;
 }
 
 .fade-up.visible {
@@ -1425,6 +1429,60 @@ footer {
 .delay-3 {
     transition-delay: 0.3s;
     animation-delay: 0.3s;
+}
+
+.delay-4 {
+    transition-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Continuous Animations */
+.float-subtle {
+    animation: floatSubtle 4s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.pulse-subtle {
+    animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .delay-4 {
@@ -1481,6 +1539,10 @@ footer {
         display: block;
     }
 
+    .hero-content {
+        margin-top: 40px;
+    }
+
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -1527,6 +1589,10 @@ footer {
 
     .footer-col {
         text-align: center;
+    }
+
+    .footer-col div {
+        justify-content: center;
     }
 }
 
