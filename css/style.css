@@ -949,21 +949,50 @@ img {
     color: var(--text-muted);
 }
 
-/* Feature Image Cards */
+/* Feature Image Cards (Marquee) */
+.features-marquee-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+}
+
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    padding-left: 30px;
+}
+
+.features-grid:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 15px));
+    }
 }
 
 .feature-image-card {
+    width: 300px;
+    /* Fixed width for marquee cards */
+    flex-shrink: 0;
+    opacity: 1 !important;
+    transform: none !important;
     background: var(--bg-card);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     transition: all var(--transition-base);
-    height: 100%;
+    /* Set an explicit height to ensure consistent card sizes in the flex row */
+    height: 380px;
 }
 
 .feature-image-card:hover {
@@ -1098,6 +1127,10 @@ img {
     align-items: center;
     justify-content: center;
     height: 100%;
+    opacity: 1 !important;
+    /* Force visible */
+    transform: none !important;
+    /* Reset transform */
 }
 
 .method-item:hover {
