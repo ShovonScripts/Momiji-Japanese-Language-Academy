@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to studying in Japan – from language schools to visas, costs, and part‑time work. Momiji Academy Dhaka provides expert guidance.">
+    <meta name="keywords" content="study in Japan, Japan student visa, Japanese language school, Dhaka to Japan, Momiji guidance">
+    <meta name="author" content="Momiji Japanese Language Academy">
+    <title>Study in Japan | Momiji Academy – Dhaka to Japan guide</title>
+    <link rel="icon" type="image/png" href="assets/images/fav.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS (shared) -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP (for animations) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Theme check -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-leaf"></div>
+    </div>
+
+    <!-- NAVIGATION (same as index/about) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Momiji Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i>Home</a>
+                <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i>About</a>
+                <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i>Courses</a>
+                <a href="japan.html" class="active" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i>Study in Japan</a>
+                <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i>Guidance</a>
+                <a href="contact.html" data-en="Contact" data-ja="お問い合わせ" class="btn-nav btn btn-primary btn-sm"><i class="fas fa-envelope"></i>Contact</a>
+                <div class="nav-controls">
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="icon-sun"><i class="fas fa-sun"></i></span>
+                    </button>
+                    <button id="langToggle" aria-label="Toggle Language">
+                        <span class="lang-text">JP</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU (same structure) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="assets/images/logo.png" alt="Momiji Logo" style="height: 40px;">
+            <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i> About</a>
+            <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i> Courses</a>
+            <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i> Study in Japan</a>
+            <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i> Guidance</a>
+            <a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            </button>
+            <button id="mobileLangToggle" class="mobile-lang-btn">
+                <span class="lang-text">JP</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PAGE HEADER (Japan specific) -->
+        <section class="page-header" style="padding: 150px 0 80px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;" data-en="Study in Japan" data-ja="日本留学">Study in Japan</h1>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;" 
+                   data-en="Your complete roadmap from Dhaka to Japanese education – schools, visas, costs and cultural preparation."
+                   data-ja="ダッカから日本への教育を目指すあなたへ – 学校、ビザ、費用、文化準備の完全ガイド。">
+                    Your complete roadmap from Dhaka to Japanese education – schools, visas, costs and cultural preparation.
+                </p>
+            </div>
+        </section>
+
+        <!-- WHY JAPAN? (benefits with icons) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Why Japan?" data-ja="なぜ日本なのか？">
+                        <i class="fas fa-globe-asia"></i> Why Japan?
+                    </span>
+                    <h2 class="section-title" data-en="A life‑changing destination" data-ja="人生を変える場所">A life‑changing destination</h2>
+                    <p class="section-desc" data-en="Discover why thousands of Bangladeshi students choose Japan every year." 
+                       data-ja="なぜ毎年多くのバングラデシュ学生が日本を選ぶのか、その理由をご覧ください。">
+                        Discover why thousands of Bangladeshi students choose Japan every year.
+                    </p>
+                </div>
+                <div class="advantages-grid" style="margin-top: 30px;">
+                    <div class="advantage-card fade-up">
+                        <div class="advantage-icon"><i class="fas fa-landmark"></i></div>
+                        <h3 data-en="Academic excellence" data-ja="高い教育水準">Academic excellence</h3>
+                        <p data-en="Home to world‑ranked universities and advanced technical institutes." 
+                           data-ja="世界レベルの大学と最先端の専門学校が集まっています。">Home to world‑ranked universities and advanced technical institutes.</p>
+                    </div>
+                    <div class="advantage-card fade-up delay-1">
+                        <div class="advantage-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3 data-en="Affordable tuition" data-ja="学費が比較的安い">Affordable tuition</h3>
+                        <p data-en="Quality education at competitive costs; extensive scholarship opportunities." 
+                           data-ja="質の高い教育を低コストで提供。多くの奨学金制度があります。">Quality education at competitive costs; extensive scholarship opportunities.</p>
+                    </div>
+                    <div class="advantage-card fade-up delay-2">
+                        <div class="advantage-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 data-en="Part‑time work" data-ja="アルバイト">Part‑time work</h3>
+                        <p data-en="Legal 28h/week – students can support living expenses and gain experience." 
+                           data-ja="週28時間以内のアルバイトが許可され、生活費を補助できます。">Legal 28h/week – support living expenses and gain experience.</p>
+                    </div>
+                    <div class="advantage-card fade-up delay-3">
+                        <div class="advantage-icon"><i class="fas fa-shield-heart"></i></div>
+                        <h3 data-en="Safe & clean" data-ja="安全で清潔">Safe & clean</h3>
+                        <p data-en="One of the safest countries with excellent public transport and healthcare." 
+                           data-ja="世界有数の安全な国。優れた公共交通機関と医療制度。">One of the safest countries with excellent public transport and healthcare.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION PATHWAY (steps) -->
+        <section class="section theme-bg-alt">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Your pathway" data-ja="留学への道筋">
+                        <i class="fas fa-road"></i> Your pathway
+                    </span>
+                    <h2 class="section-title" data-en="From Dhaka to your dream school" data-ja="ダッカから志望校へ">From Dhaka to your dream school</h2>
+                </div>
+                <div class="grid-3" style="gap: 30px; margin-top: 30px;">
+                    <!-- step 1 -->
+                    <div class="card fade-up" style="padding: 35px 25px; text-align: center; height: 100%;">
+                        <div style="font-size: 2.8rem; color: var(--primary); margin-bottom: 15px;">1</div>
+                        <i class="fas fa-language" style="font-size: 2.2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                        <h3 data-en="Japanese language (N5/N4)" data-ja="日本語学習 (N5/N4)">Japanese language (N5/N4)</h3>
+                        <p data-en="Enrol in our 3‑month intensive course. Achieve JLPT level required for visa." 
+                           data-ja="3ヶ月の集中コースで、ビザ取得に必要な日本語能力を身につけます。">Enrol in our 3‑month intensive course. Achieve JLPT level required for visa.</p>
+                    </div>
+                    <!-- step 2 -->
+                    <div class="card fade-up delay-1" style="padding: 35px 25px; text-align: center; height: 100%;">
+                        <div style="font-size: 2.8rem; color: var(--primary); margin-bottom: 15px;">2</div>
+                        <i class="fas fa-school" style="font-size: 2.2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                        <h3 data-en="School selection & application" data-ja="学校選び・出願">School selection & application</h3>
+                        <p data-en="Guidance to choose accredited language school / vocational college. We help with documents." 
+                           data-ja="適切な日本語学校・専門学校の選定と書類作成をサポート。">Accredited language schools / vocational colleges. Document preparation support.</p>
+                    </div>
+                    <!-- step 3 -->
+                    <div class="card fade-up delay-2" style="padding: 35px 25px; text-align: center; height: 100%;">
+                        <div style="font-size: 2.8rem; color: var(--primary); margin-bottom: 15px;">3</div>
+                        <i class="fas fa-passport" style="font-size: 2.2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                        <h3 data-en="Visa & pre‑departure" data-ja="ビザ・渡日準備">Visa & pre‑departure</h3>
+                        <p data-en="Interview preparation, financial proof guidance, and orientation." 
+                           data-ja="面接練習、資金証明のアドバイス、渡日オリエンテーション。">Interview practice, financial guidance, and pre‑departure orientation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COST BREAKDOWN (table style) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Estimated costs" data-ja="費用目安">
+                        <i class="fas fa-coins"></i> Estimated costs
+                    </span>
+                    <h2 class="section-title" data-en="Plan your budget" data-ja="予算計画">Plan your budget</h2>
+                    <p class="section-desc" data-en="Average yearly expenses for a Bangladeshi student (JPY/BDT)." 
+                       data-ja="バングラデシュ人留学生の年間平均費用（円・タカ）。">Average yearly expenses for a Bangladeshi student (JPY/BDT).</p>
+                </div>
+                <div class="fade-up" style="overflow-x: auto;">
+                    <table style="width:100%; border-collapse: collapse; background: var(--bg-card); border-radius: 20px; box-shadow: var(--shadow);">
+                        <thead style="background: var(--primary); color: white;">
+                            <tr>
+                                <th style="padding: 15px; text-align: left;" data-en="Expense item" data-ja="費用項目">Expense item</th>
+                                <th style="padding: 15px; text-align: left;" data-en="JPY (approx)" data-ja="円（目安）">JPY (approx)</th>
+                                <th style="padding: 15px; text-align: left;" data-en="BDT (approx)" data-ja="タカ（目安）">BDT (approx)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 15px;" data-en="Tuition (language school, 1 year)" data-ja="授業料（日本語学校・年間）">Tuition (language school, 1 year)</td>
+                                <td style="padding: 15px;">700,000</td>
+                                <td style="padding: 15px;">~550,000</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 15px;" data-en="Accommodation (shared apt, 12 months)" data-ja="住居費（シェア・12ヶ月）">Accommodation (shared apt, 12 months)</td>
+                                <td style="padding: 15px;">480,000</td>
+                                <td style="padding: 15px;">~380,000</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 15px;" data-en="Living expenses (food, transport, misc)" data-ja="生活費（食費・交通・雑費）">Living expenses (food, transport, misc)</td>
+                                <td style="padding: 15px;">600,000</td>
+                                <td style="padding: 15px;">~470,000</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px; font-weight: 700;" data-en="Total (first year)" data-ja="合計（初年度）">Total (first year)</td>
+                                <td style="padding: 15px; font-weight: 700;">1,780,000</td>
+                                <td style="padding: 15px; font-weight: 700;">~1,400,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="fade-up" style="margin-top: 30px; color: var(--text-muted); font-size:0.95rem;" 
+                   data-en="* Part‑time work (28h/week) can cover 60‑80% of living expenses." 
+                   data-ja="※週28時間のアルバイトで生活費の60〜80%を賄えます。">
+                   * Part‑time work (28h/week) can cover 60‑80% of living expenses.
+                </p>
+            </div>
+        </section>
+
+        <!-- VISA PROCESS & GUIDANCE -->
+        <section class="section theme-bg-alt">
+            <div class="container">
+                <div class="grid-2" style="align-items: start;">
+                    <div class="fade-up">
+                        <span class="section-subtitle" data-en="Visa & paperwork" data-ja="ビザ・書類">
+                            <i class="fas fa-file-signature"></i> Visa & paperwork
+                        </span>
+                        <h2 class="section-title" style="font-size: 2rem;" data-en="Student visa steps" data-ja="留学ビザの手順">Student visa steps</h2>
+                        <ul class="philosophy-list" style="margin-top: 20px;">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Receive Certificate of Eligibility (CoE) from Japanese school" data-ja="日本語学校から在留資格認定証明書(COE)を取得">Receive Certificate of Eligibility (CoE) from Japanese school</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Submit visa application at Japanese Embassy, Dhaka" data-ja="在ダッカ日本大使館に査証申請">Submit visa application at Japanese Embassy, Dhaka</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Financial proof (bank statement, etc.)" data-ja="資金証明（銀行残高証明書など）">Financial proof (bank statement, etc.)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Interview (if required)" data-ja="面接（必要な場合）">Interview (if required)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Visa issuance (usually 1‑2 weeks after CoE)" data-ja="ビザ発給（通常COE受領後1〜2週間）">Visa issuance (usually 1‑2 weeks after CoE)</span></li>
+                        </ul>
+                        <div class="guidance-notice" style="background: rgba(145,46,49,0.05); border-radius: 12px; padding: 20px; margin-top: 30px;">
+                            <i class="fas fa-info-circle" style="color: var(--primary);"></i>
+                            <strong data-en="Important:" data-ja="重要：">Important:</strong>
+                            <span data-en="Visa approval is solely decided by the Embassy. Momiji provides guidance but does not guarantee approval." 
+                                  data-ja="ビザの承認は大使館が決定します。当校は指導を行いますが、承認を保証するものではありません。">
+                                Visa approval is solely decided by the Embassy. Momiji provides guidance but does not guarantee approval.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="fade-up delay-1">
+                        <img src="assets/images/japan/visa-guide.jpg" alt="Visa guidance" style="width:100%; border-radius: 30px; box-shadow: var(--shadow-lg);" onerror="this.src='https://placehold.co/600x400/912e31/white?text=Momiji+Visa+Guide'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POPULAR DESTINATIONS (Japanese language schools / cities) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Where to go" data-ja="留学先">
+                        <i class="fas fa-city"></i> Where to go
+                    </span>
+                    <h2 class="section-title" data-en="Popular cities & schools" data-ja="人気の都市と学校">Popular cities & schools</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="feature-image-card fade-up">
+                        <div class="feature-img-container">
+                            <img src="assets/images/japan/tokyo.jpg" alt="Tokyo" style="width:100%; aspect-ratio:3/2; object-fit:cover;" onerror="this.src='https://placehold.co/400x250/912e31/white?text=Tokyo'">
+                        </div>
+                        <div class="feature-content">
+                            <h3 data-en="Tokyo" data-ja="東京">Tokyo</h3>
+                            <p data-en="The capital – endless opportunities, top language schools, part‑time jobs." 
+                               data-ja="首都・東京。数多くの学校とアルバイト先があります。">Endless opportunities, top language schools, part‑time jobs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-image-card fade-up delay-1">
+                        <div class="feature-img-container">
+                            <img src="assets/images/japan/osaka.jpg" alt="Osaka" style="width:100%; aspect-ratio:3/2; object-fit:cover;" onerror="this.src='https://placehold.co/400x250/912e31/white?text=Osaka'">
+                        </div>
+                        <div class="feature-content">
+                            <h3 data-en="Osaka" data-ja="大阪">Osaka</h3>
+                            <p data-en="Friendly dialect, vibrant culture, slightly lower cost of living." 
+                               data-ja="活気ある文化、少し安い生活費、親しみやすい方言。">Friendly dialect, vibrant culture, slightly lower cost of living.</p>
+                        </div>
+                    </div>
+                    <div class="feature-image-card fade-up delay-2">
+                        <div class="feature-img-container">
+                            <img src="assets/images/japan/fukuoka.jpg" alt="Fukuoka" style="width:100%; aspect-ratio:3/2; object-fit:cover;" onerror="this.src='https://placehold.co/400x250/912e31/white?text=Fukuoka'">
+                        </div>
+                        <div class="feature-content">
+                            <h3 data-en="Fukuoka" data-ja="福岡">Fukuoka</h3>
+                            <p data-en="Emerging student hub, affordable, excellent quality of life." 
+                               data-ja="学生に人気のエリア、生活費が手頃で暮らしやすい。">Emerging student hub, affordable, excellent quality of life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCHOLARSHIPS & SUPPORT -->
+        <section class="section theme-bg-alt">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="fade-up">
+                        <img src="assets/images/japan/scholarship.jpg" alt="Scholarship" style="width:100%; border-radius: 30px;" onerror="this.src='https://placehold.co/600x400/912e31/white?text=Scholarships'">
+                    </div>
+                    <div class="fade-up delay-1">
+                        <span class="section-subtitle" data-en="Financial help" data-ja="奨学金制度">
+                            <i class="fas fa-yen-sign"></i> Financial help
+                        </span>
+                        <h2 class="section-title" style="font-size: 2rem;" data-en="Scholarships for Bangladeshi students" data-ja="バングラデシュ人留学生のための奨学金">Scholarships for Bangladeshi students</h2>
+                        <p data-en="Several options exist: JASSO, private foundations, and local government scholarships. We help identify eligibility and guide you through applications." 
+                           data-ja="JASSO、民間財団、地方自治体の奨学金など様々な制度があります。当校では資格確認と申請をサポートします。">
+                            Several options exist: JASSO, private foundations, and local government scholarships. We help identify eligibility and guide you through applications.
+                        </p>
+                        <ul class="philosophy-list">
+                            <li><i class="fas fa-gift"></i> <span data-en="JASSO – 48,000 JPY/month (for qualifying students)" data-ja="JASSO – 月額48,000円（条件あり）">JASSO – 48,000 JPY/month (for qualifying students)</span></li>
+                            <li><i class="fas fa-gift"></i> <span data-en="Local government / school‑specific tuition reductions" data-ja="自治体・学校独自の授業料減免">Local government / school‑specific tuition reductions</span></li>
+                            <li><i class="fas fa-gift"></i> <span data-en="Private foundations (e.g. Rohm, Panasonic)" data-ja="民間財団（ローム、パナソニックなど）">Private foundations (e.g. Rohm, Panasonic)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOMIJI GUIDANCE (CTA) -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+            <div class="container text-center">
+                <h2 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 20px;" 
+                    data-en="We are with you every step" data-ja="一歩一歩をサポート">We are with you every step</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity:0.9; max-width: 700px; margin-left: auto; margin-right: auto;"
+                   data-en="From your first Hiragana lesson to your arrival in Japan – Momiji provides honest, ethical guidance."
+                   data-ja="ひらがなの第一歩から日本到着まで、Momijiが誠実にサポートします。">
+                    From your first Hiragana lesson to your arrival in Japan – Momiji provides honest, ethical guidance.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-secondary btn-lg" style="background: white; color: var(--primary); border: none;" data-en="Free consultation" data-ja="無料相談">
+                        <i class="fas fa-calendar-check"></i> Free consultation
+                    </a>
+                    <a href="guidance.html" class="btn btn-primary btn-lg" style="background: transparent; border: 2px solid white; color: white;" data-en="Guidance details" data-ja="進路指導詳細">
+                        <i class="fas fa-compass"></i> Guidance details
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ / quick answers -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="FAQ" data-ja="よくある質問">
+                        <i class="fas fa-question-circle"></i> FAQ
+                    </span>
+                    <h2 class="section-title" data-en="Quick answers" data-ja="すぐに分かる答え">Quick answers</h2>
+                </div>
+                <div class="grid-2" style="gap: 30px;">
+                    <div class="card fade-up" style="padding: 30px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="❓ Can I work while studying?" data-ja="❓ 勉強しながら働けますか？">❓ Can I work while studying?</h4>
+                        <p data-en="Yes, with a 'Designated Activities' status you can work up to 28h/week (48h during long vacations)." 
+                           data-ja="はい、「資格外活動許可」を得れば週28時間（長期休暇中は48時間）働けます。">Yes, with a 'Designated Activities' status you can work up to 28h/week.</p>
+                    </div>
+                    <div class="card fade-up delay-1" style="padding: 30px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="❓ Do I need JLPT before applying?" data-ja="❓ 出願前にJLPTは必要？">❓ Do I need JLPT before applying?</h4>
+                        <p data-en="Most language schools require at least N5. We offer N5/N4 courses designed for this." 
+                           data-ja="多くの日本語学校はN5以上を求めます。当校のN5/N4コースで準備できます。">Most language schools require at least N5. We offer N5/N4 courses designed for this.</p>
+                    </div>
+                    <div class="card fade-up delay-2" style="padding: 30px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="❓ What is the success rate?" data-ja="❓ ビザ成功率は？">❓ What is the success rate?</h4>
+                        <p data-en="It varies, but with complete documents and proven financial capacity it is generally high. We help maximise your preparedness." 
+                           data-ja="書類が整い資金証明がしっかりしていれば高い傾向です。準備を徹底サポートします。">Generally high with complete documents. We help maximise your preparedness.</p>
+                    </div>
+                    <div class="card fade-up delay-3" style="padding: 30px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="❓ Can I take my family?" data-ja="❓ 家族を連れて行けますか？">❓ Can I take my family?</h4>
+                        <p data-en="Not on a student visa initially. After settling, dependent visa may be possible for spouse/children under certain conditions." 
+                           data-ja="留学ビザでは家族帯同はできませんが、後に「家族滞在」ビザの要件を満たす場合があります。">Not initially. Later, dependent visa may be possible under certain conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (identical to other pages) -->
+    <footer>
+        <div style="height: 4px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), var(--primary), transparent); width: 100%;"></div>
+        <div class="container" style="padding: 60px 0 40px;">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Momiji Logo"></div>
+                    <p data-en="Your trusted gateway to Japanese language education and Japan study opportunities." data-ja="日本語教育と日本留学への信頼できる架け橋。">Your trusted gateway to Japanese language education and Japan study opportunities.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Quick Links" data-ja="クイックリンク"><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="About Us" data-ja="Momijiについて"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-chevron-right"></i> Study in Japan</a></li>
+                        <li><a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-chevron-right"></i> Guidance</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-address-book"></i> Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dhaka, Bangladesh" data-ja="バングラデシュ、ダッカ">Dhaka, Bangladesh</span></p>
+                    <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@momiji.edu.bd</p>
+                    <p><i class="fas fa-globe"></i> www.momiji.edu.bd</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Hours" data-ja="営業時間"><i class="fas fa-clock"></i> Hours</h4>
+                    <p><i class="far fa-clock"></i> <span data-en="10:00 AM – 6:00 PM" data-ja="午前10時～午後6時">10:00 AM – 6:00 PM</span></p>
+                    <p><i class="far fa-calendar"></i> <span data-en="Saturday - Thursday" data-ja="土曜日～木曜日">Saturday - Thursday</span></p>
+                    <p><i class="fas fa-hourglass-half"></i> <span data-en="Friday Closed" data-ja="金曜日休校">Friday Closed</span></p>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <span><i class="fas fa-certificate"></i> <span data-en="Registered Institute" data-ja="登録機関">Registered Institute</span></span>
+                <span><i class="fas fa-language"></i> <span data-en="JLPT Preparation Center" data-ja="JLPT準備センター">JLPT Preparation Center</span></span>
+                <span><i class="fas fa-handshake"></i> <span data-en="Ethical Guidance" data-ja="倫理的指導">Ethical Guidance</span></span>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: none; padding-top: 20px;">
+                <div><p style="margin:0;"><i class="far fa-copyright"></i> <span data-en="2026 Momiji Japanese Language Academy. All rights reserved." data-ja="2026 Momiji Japanese Language Academy. All rights reserved.">2026 Momiji Japanese Language Academy. All rights reserved.</span></p></div>
+                <div>
+                    <a href="https://prodo.top" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; font-size:0.9rem; display:flex; align-items:center; gap:5px;">
+                        <span data-en="Crafted by" data-ja="制作">Crafted by</span>
+                        <strong style="color: var(--primary);">ProDo</strong>
+                        <i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (shared) -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        // additional fade-up observer if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // fade-up activation same as other pages
+            const faders = document.querySelectorAll('.fade-up');
+            const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+    </script>
+    <!-- Placeholder image fallback (for demonstration) -->
+    <style>
+        img[src=""], img:not([src]) { opacity:0; }
+    </style>
+</body>
+</html>

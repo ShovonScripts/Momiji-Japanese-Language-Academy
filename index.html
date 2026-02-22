@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Momiji Japanese Language Academy - Professional Japanese language training in Dhaka. N5 & N4 courses, small batches, and Japan student guidance.">
+    <meta name="keywords"
+        content="Japanese language school Dhaka, JLPT preparation, study in Japan, N5 course, N4 course">
+    <meta name="author" content="Momiji Japanese Language Academy">
+    <title>Momiji Japanese Language Academy | Japanese Language Training in Dhaka</title>
+    <link rel="icon" type="image/png" href="assets/images/fav.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Theme Check -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-leaf"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Momiji Logo">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html" class="active" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i>Home</a>
+                <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i>About</a>
+                <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i>Courses</a>
+                <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i>Study in Japan</a>
+                <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i>Guidance</a>
+                <a href="contact.html" data-en="Contact" data-ja="お問い合わせ" class="btn-nav btn btn-primary btn-sm"><i class="fas fa-envelope"></i>Contact</a>
+
+                <div class="nav-controls">
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="icon-sun"><i class="fas fa-sun"></i></span>
+                    </button>
+                    <button id="langToggle" aria-label="Toggle Language">
+                        <span class="lang-text">JP</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="assets/images/logo.png" alt="Momiji Logo" style="height: 40px;">
+            <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i> About</a>
+            <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i> Courses</a>
+            <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i> Study in Japan</a>
+            <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i> Guidance</a>
+            <a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            </button>
+            <button id="mobileLangToggle" class="mobile-lang-btn">
+                <span class="lang-text">JP</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-badge animate-hero" data-en="Specialized in Study in Japan" data-ja="日本留学専門">
+                    <i class="fas fa-leaf"></i> Specialized in Study in Japan
+                </span>
+                <h1 data-en="Begin Your Journey<br>to Japan with Confidence" data-ja="自信を持って日本への旅を始めましょう" class="animate-hero">
+                    Begin Your Journey<br>to Japan with Confidence
+                </h1>
+                <p data-en="Momiji offers comprehensive Japanese language training in Dhaka with a focus on academic excellence and cultural understanding. Our structured programs prepare students for success in Japan through disciplined, offline learning in small, personalized batches."
+                   data-ja="Momijiはダッカで総合的な日本語トレーニングを提供し、学術的優秀さと文化的理解に焦点を当てています。体系化されたプログラムは、規律ある対面学習と少人数制の個別指導を通じて、学生の日本での成功を準備します。"
+                   class="animate-hero delay-1">
+                    Momiji offers comprehensive Japanese language training in Dhaka with a focus on academic excellence and cultural understanding. Our structured programs prepare students for success in Japan through disciplined, offline learning in small, personalized batches.
+                </p>
+                <div class="hero-buttons animate-hero delay-2">
+                    <a href="courses.html" class="btn btn-primary btn-lg" data-en="Enroll Now" data-ja="今すぐ申し込む">
+                        <i class="fas fa-graduation-cap"></i> Enroll Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-lg" data-en="Contact Us" data-ja="お問い合わせ">
+                        <i class="fas fa-phone-alt"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="leaves-container" id="leavesContainer"></div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="section about-preview" id="about-preview">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Who We Are" data-ja="私たちについて">
+                        <i class="fas fa-leaf"></i> Who We Are
+                    </span>
+                    <h2 data-en="About Momiji" data-ja="Momijiについて" class="section-title">About Momiji</h2>
+                    <p data-en="Momiji Japanese Language Academy is a specialized institute in Dhaka dedicated to preparing students for academic and professional success in Japan through disciplined, offline education."
+                       data-ja="Momiji日本語アカデミーは、日本での学問的および職業的成功のために学生を準備することに特化したダッカの専門機関です。対面式の規律ある日本語教育に焦点を当てています。"
+                       class="section-desc">
+                        Momiji Japanese Language Academy is a specialized institute in Dhaka dedicated to preparing students for academic and professional success in Japan through disciplined, offline education.
+                    </p>
+                </div>
+
+                <div class="stats-grid fade-up delay-1">
+                    <div class="stat-card-modern">
+                        <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div class="stat-number">3</div>
+                        <div class="stat-label" data-en="Months" data-ja="3ヶ月">Months</div>
+                        <div class="stat-desc" data-en="Course Duration" data-ja="コース期間">Course Duration</div>
+                    </div>
+                    <div class="stat-card-modern">
+                        <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label" data-en="Days/Week" data-ja="週6日">Days/Week</div>
+                        <div class="stat-desc" data-en="Intensive Classes" data-ja="集中クラス">Intensive Classes</div>
+                    </div>
+                    <div class="stat-card-modern">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-number">10-15</div>
+                        <div class="stat-label" data-en="Students" data-ja="10-15名">Students</div>
+                        <div class="stat-desc" data-en="Per Batch" data-ja="1クラスの定員">Per Batch</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Philosophy -->
+        <section class="section philosophy-section">
+            <div class="container">
+                <div class="grid-2">
+                    <div class="philosophy-content fade-up">
+                        <span class="section-subtitle" data-en="Our Philosophy" data-ja="私たちの哲学">
+                            <i class="fas fa-dove"></i> Our Philosophy
+                        </span>
+                        <h2 class="section-title" data-en="Language Learning as a Disciplined Journey"
+                            data-ja="規律ある旅としての言語学習">Language Learning as a Disciplined Journey</h2>
+                        <p class="philosophy-text"
+                           data-en="At Momiji, we believe success in Japan requires more than passing an examination—it requires real communication ability, confidence, and cultural understanding."
+                           data-ja="Momijiでは、日本での成功には試験に合格する以上のものが必要であると信じています。それは、真のコミュニケーション能力、自信、そして文化的な理解です。">
+                            At Momiji, we believe success in Japan requires more than passing an examination—it requires real communication ability, confidence, and cultural understanding.
+                        </p>
+                        <ul class="philosophy-list">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Consistent daily practice" data-ja="毎日の一貫した練習">Consistent daily practice</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Direct teacher-student interaction" data-ja="教師と生徒の直接的な対話">Direct teacher-student interaction</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Immediate correction of pronunciation" data-ja="発音の即時修正">Immediate correction of pronunciation</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Regular assessment and feedback" data-ja="定期的な評価とフィードバック">Regular assessment and feedback</span></li>
+                        </ul>
+                    </div>
+                    <div class="philosophy-image fade-up delay-1">
+                        <img src="assets/images/philosophy.jpg" alt="Teaching philosophy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Overview -->
+        <section class="section courses-overview theme-bg-alt">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Our Programs" data-ja="プログラム">
+                        <i class="fas fa-book-open"></i> Our Programs
+                    </span>
+                    <h2 data-en="Japanese Language Courses" data-ja="日本語コース" class="section-title">Japanese Language Courses</h2>
+                    <p class="section-desc">Choose your path to Japanese proficiency with our structured courses</p>
+                </div>
+
+                <div class="courses-grid">
+                    <!-- N5 Course Card -->
+                    <div class="course-image-card fade-up delay-1">
+                        <div class="course-img-container">
+                            <img src="assets/images/courses/n5-class.jpg" alt="Japanese language beginner class" class="course-img" loading="lazy">
+                            <div class="course-img-overlay"></div>
+                            <div class="course-level-badge">N5</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 data-en="N5 Beginner Course" data-ja="N5 初級コース">Beginner Course</h3>
+                            <p data-en="For students with no prior knowledge. Master Hiragana, Katakana, basic grammar, and essential conversation skills."
+                               data-ja="初心者のためのコース。ひらがな、カタカナ、基本的な文法、会話を学びます。">
+                                For students with no prior knowledge. Master Hiragana, Katakana, basic grammar, and essential conversation skills.
+                            </p>
+                            <div class="course-meta">
+                                <span class="meta-item"><i class="far fa-calendar-alt"></i> 3 Months</span>
+                                <span class="meta-item"><i class="fas fa-tag"></i> 15,000 BDT</span>
+                            </div>
+                            <div class="course-meta">
+                                <span class="meta-item"><i class="far fa-clock"></i> 6 days/week</span>
+                                <span class="meta-item"><i class="fas fa-users"></i> 10-15 students</span>
+                            </div>
+                            <a href="courses.html#n5" class="btn btn-primary btn-sm">
+                                <i class="fas fa-arrow-right"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- N4 Course Card -->
+                    <div class="course-image-card fade-up delay-2">
+                        <div class="course-img-container">
+                            <img src="assets/images/courses/n4-class.jpg" alt="Japanese language intermediate class" class="course-img" loading="lazy">
+                            <div class="course-img-overlay"></div>
+                            <div class="course-level-badge">N4</div>
+                        </div>
+                        <div class="course-content">
+                            <h3 data-en="N4 Intermediate Course" data-ja="N4 中級コース">Intermediate Course</h3>
+                            <p data-en="For students who have completed N5. Focuses on intermediate grammar, Kanji, and conversational fluency."
+                               data-ja="N5修了者向け。中級文法、漢字、流暢な会話に焦点を当てます。">
+                                For students who have completed N5. Focuses on intermediate grammar, Kanji, and conversational fluency.
+                            </p>
+                            <div class="course-meta">
+                                <span class="meta-item"><i class="far fa-calendar-alt"></i> 3 Months</span>
+                                <span class="meta-item"><i class="fas fa-tag"></i> 15,000 BDT</span>
+                            </div>
+                            <div class="course-meta">
+                                <span class="meta-item"><i class="far fa-clock"></i> 6 days/week</span>
+                                <span class="meta-item"><i class="fas fa-users"></i> 10-15 students</span>
+                            </div>
+                            <a href="courses.html#n4" class="btn btn-primary btn-sm">
+                                <i class="fas fa-arrow-right"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Note - Properly Centered -->
+                <div class="schedule-note fade-up" style="display: flex; justify-content: center; margin-top: 40px;">
+                    <p>
+                        <i class="fas fa-clock"></i> 
+                        <strong data-en="Intensive Schedule:" data-ja="集中スケジュール：">Intensive Schedule:</strong> 
+                        <span data-en="3 Months • 6 Days/Week • 3 Hours/Day" data-ja="3ヶ月 • 週6日 • 1日3時間">3 Months • 6 Days/Week • 3 Hours/Day</span>
+                    </p>
+                </div>
+
+                <div class="text-center mt-5 fade-up">
+                    <a href="courses.html" class="btn btn-secondary btn-lg">View All Courses <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Japan Advantage Preview -->
+        <section class="section japan-preview">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Why Japan?" data-ja="なぜ日本なのか？">
+                        <i class="fas fa-globe-asia"></i> Why Japan?
+                    </span>
+                    <h2 class="section-title" data-en="Study in Japan" data-ja="日本留学">Study in Japan</h2>
+                </div>
+                <div class="advantages-grid">
+                    <div class="advantage-card fade-up">
+                        <div class="advantage-icon"><i class="fas fa-landmark"></i></div>
+                        <h3 data-en="World-Class Education" data-ja="世界クラスの教育">World-Class Education</h3>
+                        <p data-en="Globally respected institutions with cutting-edge research facilities."
+                           data-ja="最先端の研究施設を備えた世界的に評価の高い機関。">
+                            Globally respected institutions with cutting-edge research facilities.
+                        </p>
+                    </div>
+                    <div class="advantage-card fade-up delay-1">
+                        <div class="advantage-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3 data-en="Affordable Tuition" data-ja="手頃な授業料">Affordable Tuition</h3>
+                        <p data-en="Quality education at competitive costs compared to Western countries."
+                           data-ja="欧米諸国と比較して競争力のある費用で質の高い教育。">
+                            Quality education at competitive costs compared to Western countries.
+                        </p>
+                    </div>
+                    <div class="advantage-card fade-up delay-2">
+                        <div class="advantage-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 data-en="Part-Time Work" data-ja="アルバイト">Part-Time Work</h3>
+                        <p data-en="Legal 28 hours/week work permission for international students."
+                           data-ja="留学生のための週28時間の法的労働許可。">
+                            Legal 28 hours/week work permission for international students.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Momiji -->
+        <section class="section why-choose theme-bg-alt">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Why Choose Us" data-ja="選ばれる理由">
+                        <i class="fas fa-star"></i> Why Choose Us
+                    </span>
+                    <h2 data-en="The Momiji Difference" data-ja="Momijiの違い" class="section-title">The Momiji Difference</h2>
+                    <p class="section-desc">What makes our Japanese language training unique in Dhaka</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature 1: Japan Focus -->
+                    <div class="feature-image-card fade-up">
+                        <div class="feature-img-container">
+                            <img src="assets/images/features/japan-focus.jpg" alt="Japan focus" class="feature-img" loading="lazy">
+                            <div class="feature-img-overlay"></div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon-premium"><i class="fas fa-map-pin"></i></div>
+                            <h3 data-en="Japan-Only Focus" data-ja="日本専門">Japan-Only Focus</h3>
+                            <p data-en="We specialize exclusively in Japanese language and culture."
+                               data-ja="日本語教育に特化しています。">We specialize exclusively in Japanese language and culture.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Offline Discipline -->
+                    <div class="feature-image-card fade-up delay-1">
+                        <div class="feature-img-container">
+                            <img src="assets/images/features/classroom.jpg" alt="Classroom learning" class="feature-img" loading="lazy">
+                            <div class="feature-img-overlay"></div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon-premium"><i class="fas fa-chalkboard-user"></i></div>
+                            <h3 data-en="Offline Discipline" data-ja="対面授業">Offline Discipline</h3>
+                            <p data-en="Real-time correction and structured classroom learning."
+                               data-ja="リアルタイムの修正と体系的な教室学習。">Real-time correction and structured classroom learning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Small Batches -->
+                    <div class="feature-image-card fade-up delay-2">
+                        <div class="feature-img-container">
+                            <img src="assets/images/features/small-batch.jpg" alt="Small class size" class="feature-img" loading="lazy">
+                            <div class="feature-img-overlay"></div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon-premium"><i class="fas fa-user-group"></i></div>
+                            <h3 data-en="Small Batches" data-ja="少人数制">Small Batches</h3>
+                            <p data-en="Personal attention with only 10-15 students per class."
+                               data-ja="1クラス10〜15名の少人数制で、一人ひとりに目が行き届きます。">Personal attention with only 10-15 students per class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: AC Classrooms -->
+                    <div class="feature-image-card fade-up delay-3">
+                        <div class="feature-img-container">
+                            <img src="assets/images/features/ac-classroom.jpg" alt="Modern AC classroom" class="feature-img" loading="lazy">
+                            <div class="feature-img-overlay"></div>
+                        </div>
+                        <div class="feature-content">
+                            <div class="feature-icon-premium"><i class="fas fa-wind"></i></div>
+                            <h3 data-en="AC Classrooms" data-ja="快適な教室">AC Classrooms</h3>
+                            <p data-en="Comfortable, distraction-free environment for learning."
+                               data-ja="エアコン完備の静かな学習環境。">Comfortable, distraction-free environment for learning.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility Highlights -->
+                <div class="facility-highlights fade-up">
+                    <div class="highlight-item">
+                        <i class="fas fa-wind"></i>
+                        <span data-en="Air Conditioned" data-ja="エアコン完備">Air Conditioned</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-user-graduate"></i>
+                        <span data-en="Qualified Instructors" data-ja="有資格の講師">Qualified Instructors</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-book"></i>
+                        <span data-en="Study Materials" data-ja="教材">Study Materials</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Methodology -->
+        <section class="section methodology">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="How We Teach" data-ja="指導方法">
+                        <i class="fas fa-chalkboard"></i> How We Teach
+                    </span>
+                    <h2 class="section-title" data-en="Our Teaching Approach" data-ja="私たちの指導アプローチ">Our Teaching Approach</h2>
+                </div>
+                <div class="methodology-grid">
+                    <div class="method-item fade-up">
+                        <i class="fas fa-book-open"></i>
+                        <h4 data-en="Textbook Based" data-ja="教科書に基づく">Textbook Based</h4>
+                    </div>
+                    <div class="method-item fade-up delay-1">
+                        <i class="fas fa-chalkboard"></i>
+                        <h4 data-en="Board Explanations" data-ja="板書説明">Board Explanations</h4>
+                    </div>
+                    <div class="method-item fade-up delay-2">
+                        <i class="fas fa-microphone-alt"></i>
+                        <h4 data-en="Speaking Drills" data-ja="スピーキング練習">Speaking Drills</h4>
+                    </div>
+                    <div class="method-item fade-up delay-3">
+                        <i class="fas fa-headphones"></i>
+                        <h4 data-en="Listening Practice" data-ja="リスニング練習">Listening Practice</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Guidance -->
+        <section class="section guidance-section theme-bg-dark">
+            <div class="container content-center">
+                <span class="section-subtitle" data-en="Your Future" data-ja="あなたの未来">
+                    <i class="fas fa-graduation-cap"></i> Your Future in Japan
+                </span>
+                <h2 data-en="Student Guidance" data-ja="進路指導" class="section-title text-light">Student Guidance</h2>
+                <p data-en="We provide honest, ethical guidance for students planning to study in Japan, including school selection, document preparation, and interview practice."
+                   data-ja="日本への留学を計画している学生のために、学校選びや面接準備など、誠実な指導を行います。" 
+                   class="section-desc text-light-muted" style="max-width: 700px;">
+                    We provide honest, ethical guidance for students planning to study in Japan, including school selection, document preparation, and interview practice.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+                    <a href="guidance.html" class="btn btn-primary btn-lg" data-en="Learn More" data-ja="詳しく見る">
+                        <i class="fas fa-compass"></i> Learn More
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-calendar-check"></i> Schedule Consultation
+                    </a>
+                </div>
+
+                <!-- Ethical Guidance Notice -->
+                <div class="guidance-notice">
+                    <p>
+                        <i class="fas fa-info-circle"></i> 
+                        <strong data-en="Important Notice:" data-ja="重要なお知らせ：">Important Notice:</strong> 
+                        <span data-en="Visa approval decisions are made solely by the Japanese Embassy. Momiji provides guidance only and does not guarantee visa approval."
+                              data-ja="ビザの承認決定は日本大使館のみが行います。Momijiは指導のみを行い、ビザの承認を保証するものではありません。">
+                            Visa approval decisions are made solely by the Japanese Embassy. Momiji provides guidance only and does not guarantee visa approval.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Testimonials -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Success Stories" data-ja="成功事例">
+                        <i class="fas fa-comments"></i> Success Stories
+                    </span>
+                    <h2 class="section-title" data-en="What Our Students Say" data-ja="学生の声">What Our Students Say</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card fade-up">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p data-en="The structured teaching at Momiji prepared me well for JLPT N5. The small class size meant personalized attention."
+                               data-ja="Momijiの体系的な授業は、JLPT N5の準備に役立ちました。少人数制クラスなので、一人ひとりに目が行き届いていました。">
+                                The structured teaching at Momiji prepared me well for JLPT N5. The small class size meant personalized attention.
+                            </p>
+                            <div class="testimonial-author">
+                                <strong data-en="Rafiq Ahmed" data-ja="ラフィク・アーメド">Rafiq Ahmed</strong>
+                                <span data-en="N5 Graduate" data-ja="N5卒業生">N5 Graduate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-up delay-1">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p data-en="The guidance counselors helped me choose the right language school in Tokyo. Now preparing for my visa interview."
+                               data-ja="進路指導のカウンセラーが東京の適切な日本語学校を選ぶのを手伝ってくれました。今はビザの面接準備をしています。">
+                                The guidance counselors helped me choose the right language school in Tokyo. Now preparing for my visa interview.
+                            </p>
+                            <div class="testimonial-author">
+                                <strong data-en="Nusrat Jahan" data-ja="ヌスラット・ジャハン">Nusrat Jahan</strong>
+                                <span data-en="N4 Student" data-ja="N4学生">N4 Student</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="section contact-cta theme-bg-alt">
+            <div class="container text-center">
+                <h2 data-en="Ready to Start Your Journey?" data-ja="始める準備はできましたか？" class="cta-title">Ready to Start Your Journey?</h2>
+                <p data-en="Visit our Dhaka center today or contact us for enrollment."
+                   data-ja="今日オフィスにお越しいただくか、入学についてお問い合わせください。" class="cta-text">
+                    Visit our Dhaka center today or contact us for enrollment.
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg shine-effect" data-en="Contact Us" data-ja="お問い合わせ">
+                        <i class="fas fa-phone-alt"></i> Contact Us
+                    </a>
+                    <a href="courses.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-book-open"></i> View Courses
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Decorative Top Border -->
+        <div style="height: 4px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), var(--primary), transparent); width: 100%;"></div>
+        
+        <!-- Footer Main Content -->
+        <div class="container" style="padding: 60px 0 40px;">
+            <div class="footer-container">
+                <!-- Column 1: About & Social -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Momiji Logo">
+                    </div>
+                    <p data-en="Your trusted gateway to Japanese language education and Japan study opportunities." 
+                       data-ja="日本語教育と日本留学への信頼できる架け橋。">
+                       Your trusted gateway to Japanese language education and Japan study opportunities.
+                    </p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Quick Links" data-ja="クイックリンク">
+                        <i class="fas fa-link"></i> Quick Links
+                    </h4>
+                    <ul>
+                        <li><a href="about.html" data-en="About Us" data-ja="Momijiについて"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-chevron-right"></i> Study in Japan</a></li>
+                        <li><a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-chevron-right"></i> Guidance</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Contact" data-ja="お問い合わせ">
+                        <i class="fas fa-address-book"></i> Contact
+                    </h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dhaka, Bangladesh" data-ja="バングラデシュ、ダッカ">Dhaka, Bangladesh</span></p>
+                    <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@momiji.edu.bd</p>
+                    <p><i class="fas fa-globe"></i> www.momiji.edu.bd</p>
+                </div>
+
+                <!-- Column 4: Hours -->
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Hours" data-ja="営業時間">
+                        <i class="fas fa-clock"></i> Hours
+                    </h4>
+                    <p><i class="far fa-clock"></i> <span data-en="10:00 AM – 6:00 PM" data-ja="午前10時～午後6時">10:00 AM – 6:00 PM</span></p>
+                    <p><i class="far fa-calendar"></i> <span data-en="Saturday - Thursday" data-ja="土曜日～木曜日">Saturday - Thursday</span></p>
+                    <p><i class="fas fa-hourglass-half"></i> <span data-en="Friday Closed" data-ja="金曜日休校">Friday Closed</span></p>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <span><i class="fas fa-certificate"></i> <span data-en="Registered Institute" data-ja="登録機関">Registered Institute</span></span>
+                <span><i class="fas fa-language"></i> <span data-en="JLPT Preparation Center" data-ja="JLPT準備センター">JLPT Preparation Center</span></span>
+                <span><i class="fas fa-handshake"></i> <span data-en="Ethical Guidance" data-ja="倫理的指導">Ethical Guidance</span></span>
+            </div>
+
+            <!-- Footer Bottom with Copyright and ProDo Credit -->
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: none; padding-top: 20px;">
+                <div>
+                    <p style="margin: 0;">
+                        <i class="far fa-copyright"></i> 
+                        <span data-en="2026 Momiji Japanese Language Academy. All rights reserved." 
+                              data-ja="2026 Momiji Japanese Language Academy. All rights reserved.">
+                              2026 Momiji Japanese Language Academy. All rights reserved.
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Crafted by ProDo Link -->
+                <div>
+                    <a href="https://prodo.top" target="_blank" rel="noopener noreferrer" 
+                       style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; transition: color 0.3s ease;">
+                        <span data-en="Crafted by" data-ja="制作">Crafted by</span>
+                        <strong style="color: var(--primary);">ProDo</strong>
+                        <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+</html>

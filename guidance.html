@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Honest, ethical guidance for study in Japan – school selection, document preparation, interview practice. Momiji Academy Dhaka.">
+    <meta name="keywords" content="study in Japan guidance, Japanese language school application, visa interview preparation, Momiji guidance">
+    <meta name="author" content="Momiji Japanese Language Academy">
+    <title>Guidance | Momiji Academy – Study in Japan support</title>
+    <link rel="icon" type="image/png" href="assets/images/fav.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Theme Check -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-leaf"></div>
+    </div>
+
+    <!-- NAVIGATION (shared) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Momiji Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i>Home</a>
+                <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i>About</a>
+                <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i>Courses</a>
+                <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i>Study in Japan</a>
+                <a href="guidance.html" class="active" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i>Guidance</a>
+                <a href="contact.html" data-en="Contact" data-ja="お問い合わせ" class="btn-nav btn btn-primary btn-sm"><i class="fas fa-envelope"></i>Contact</a>
+                <div class="nav-controls">
+                    <button id="themeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="icon-sun"><i class="fas fa-sun"></i></span>
+                    </button>
+                    <button id="langToggle" aria-label="Toggle Language">
+                        <span class="lang-text">JP</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <img src="assets/images/logo.png" alt="Momiji Logo" style="height: 40px;">
+            <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" data-en="Home" data-ja="ホーム"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html" data-en="About" data-ja="Momijiについて"><i class="fas fa-info-circle"></i> About</a>
+            <a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-book"></i> Courses</a>
+            <a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-map-pin"></i> Study in Japan</a>
+            <a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-compass"></i> Guidance</a>
+            <a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+        <div class="mobile-menu-footer">
+            <button id="mobileThemeToggle" class="mobile-theme-btn">
+                <span class="icon-moon"><i class="fas fa-moon"></i></span>
+                <span class="icon-sun"><i class="fas fa-sun"></i></span>
+            </button>
+            <button id="mobileLangToggle" class="mobile-lang-btn">
+                <span class="lang-text">JP</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header" style="padding: 150px 0 80px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 20px;" data-en="Student Guidance" data-ja="進路指導">Student Guidance</h1>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;" 
+                   data-en="Ethical, honest support for your journey to Japan – from school selection to visa interview."
+                   data-ja="日本への道のりを倫理的かつ誠実にサポート – 学校選びからビザ面接まで。">
+                    Ethical, honest support for your journey to Japan – from school selection to visa interview.
+                </p>
+            </div>
+        </section>
+
+        <!-- GUIDANCE PHILOSOPHY / OVERVIEW -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-2" style="align-items: center; gap: 50px;">
+                    <div class="fade-up">
+                        <span class="section-subtitle" data-en="Our commitment" data-ja="私たちの約束">
+                            <i class="fas fa-hand-holding-heart"></i> Our commitment
+                        </span>
+                        <h2 class="section-title" data-en="Guidance you can trust" data-ja="信頼できる進路指導">Guidance you can trust</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.8;"
+                           data-en="At Momiji, we believe in transparency. We never promise visa approval – because that decision rests solely with the Embassy. What we do offer is thorough, professional preparation to give you the best possible chance."
+                           data-ja="Momijiは透明性を大切にします。ビザ承認を約束することは決してありません – その決定は大使館のみが行うからです。私たちが提供するのは、入念で専門的な準備サポートであり、それによって可能性を最大限に高めます。">
+                            At Momiji, we believe in transparency. We never promise visa approval – because that decision rests solely with the Embassy. What we do offer is thorough, professional preparation to give you the best possible chance.
+                        </p>
+                        <p style="color: var(--text-muted); line-height: 1.8;"
+                           data-en="Our guidance covers every step: selecting the right school, preparing flawless documents, financial proof guidance, interview practice, and pre‑departure orientation."
+                           data-ja="進路指導では、学校選び、完璧な書類準備、資金証明のアドバイス、面接練習、渡日オリエンテーションまで、すべてのステップをカバーします。">
+                            Our guidance covers every step: selecting the right school, preparing flawless documents, financial proof guidance, interview practice, and pre‑departure orientation.
+                        </p>
+                    </div>
+                    <div class="fade-up delay-1">
+                        <img src="assets/images/guidance/counseling.jpg" alt="Guidance counseling" style="width:100%; border-radius: 30px; box-shadow: var(--shadow-lg);" onerror="this.src='https://placehold.co/600x500/912e31/white?text=Momiji+Guidance'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STEP‑BY‑STEP GUIDANCE (timeline style) -->
+        <section class="section theme-bg-alt">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Step by step" data-ja="ステップバイステップ">
+                        <i class="fas fa-stairs"></i> Step by step
+                    </span>
+                    <h2 class="section-title" data-en="How we support you" data-ja="サポートの流れ">How we support you</h2>
+                    <p class="section-desc" data-en="Clear milestones on your path to Japan." data-ja="日本への道のりを明確にします。">Clear milestones on your path to Japan.</p>
+                </div>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <!-- Step 1 -->
+                    <div class="fade-up" style="display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; flex-shrink: 0;">1</div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 8px;" data-en="Initial consultation" data-ja="初回相談">Initial consultation</h3>
+                            <p data-en="We discuss your goals, academic background, financial capacity, and preferred cities. We explain realistic timelines and answer all your questions – no obligation." 
+                               data-ja="目標、学歴、資金計画、希望都市などをお伺いします。現実的なスケジュールを説明し、疑問にお答えします（無料）。">We discuss your goals, academic background, financial capacity, and preferred cities. We explain realistic timelines and answer all your questions – no obligation.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="fade-up delay-1" style="display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; flex-shrink: 0;">2</div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 8px;" data-en="School selection" data-ja="学校選び">School selection</h3>
+                            <p data-en="Based on your profile, we recommend accredited Japanese language schools / vocational colleges. We provide brochures, application requirements, and deadlines." 
+                               data-ja="あなたのプロフィールに合わせて、適切な日本語学校・専門学校をご提案します。学校案内、出願要件、締切などをお伝えします。">Based on your profile, we recommend accredited Japanese language schools / vocational colleges. We provide brochures, application requirements, and deadlines.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="fade-up delay-2" style="display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; flex-shrink: 0;">3</div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 8px;" data-en="Document preparation" data-ja="書類作成">Document preparation</h3>
+                            <p data-en="We guide you through every form: application forms, study plan, financial statement, graduation certificates. We review drafts and help you avoid common mistakes." 
+                               data-ja="出願書類、履歴書、志望理由書、資金証明書類など、一つ一つ丁寧に指導します。下書きを確認し、よくあるミスを防ぎます。">We guide you through every form: application forms, study plan, financial statement, graduation certificates. We review drafts and help you avoid common mistakes.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="fade-up delay-3" style="display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; flex-shrink: 0;">4</div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 8px;" data-en="Interview coaching" data-ja="面接対策">Interview coaching</h3>
+                            <p data-en="Many schools/embassy conduct interviews. We hold mock interviews, provide feedback, and build your confidence – in English and Japanese." 
+                               data-ja="学校や大使館で面接が行われる場合があります。模擬面接を実施し、フィードバックを行い、英語・日本語での自信をつけます。">Many schools/embassy conduct interviews. We hold mock interviews, provide feedback, and build your confidence – in English and Japanese.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="fade-up delay-4" style="display: flex; gap: 30px; margin-bottom: 20px; align-items: flex-start;">
+                        <div style="background: var(--primary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.8rem; flex-shrink: 0;">5</div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 8px;" data-en="Pre‑departure orientation" data-ja="渡日オリエンテーション">Pre‑departure orientation</h3>
+                            <p data-en="Once your visa is granted, we brief you on living in Japan: accommodation, part‑time jobs, cultural norms, and what to pack." 
+                               data-ja="ビザ取得後は、日本での生活について説明します：住まい、アルバイト、文化習慣、持参物など。">Once your visa is granted, we brief you on living in Japan: accommodation, part‑time jobs, cultural norms, and what to pack.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCUMENT CHECKLIST (interactive style) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Paperwork" data-ja="必要書類">
+                        <i class="fas fa-clipboard-list"></i> Paperwork
+                    </span>
+                    <h2 class="section-title" data-en="Typical application documents" data-ja="主な出願書類">Typical application documents</h2>
+                </div>
+                <div class="grid-2" style="gap: 30px;">
+                    <div class="card fade-up" style="padding: 35px;">
+                        <h3 style="color: var(--primary); margin-bottom: 20px;" data-en="📄 For the school" data-ja="📄 学校提出用">📄 For the school</h3>
+                        <ul class="philosophy-list">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Application form (school specific)" data-ja="入学願書">Application form (school specific)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Study plan / statement of purpose" data-ja="志望理由書">Study plan / statement of purpose</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Graduation certificates (academic)" data-ja="最終学歴の卒業証明書">Graduation certificates (academic)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Academic transcripts" data-ja="成績証明書">Academic transcripts</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="JLPT certificate (if applicable)" data-ja="JLPT証明書（該当者）">JLPT certificate (if applicable)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Passport copy" data-ja="パスポートコピー">Passport copy</span></li>
+                        </ul>
+                    </div>
+                    <div class="card fade-up delay-1" style="padding: 35px;">
+                        <h3 style="color: var(--primary); margin-bottom: 20px;" data-en="💰 Financial documents" data-ja="💰 資金関係">💰 Financial documents</h3>
+                        <ul class="philosophy-list">
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Bank statement (usually 6 months)" data-ja="銀行残高証明書（通常6か月分）">Bank statement (usually 6 months)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Sponsor's letter of guarantee" data-ja="経費支弁書">Sponsor's letter of guarantee</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Proof of employment / income (sponsor)" data-ja="スポンサーの在職証明書・収入証明">Proof of employment / income (sponsor)</span></li>
+                            <li><i class="fas fa-check-circle"></i> <span data-en="Tax certificates (if available)" data-ja="納税証明書（ある場合）">Tax certificates (if available)</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fade-up text-center" style="margin-top: 40px;">
+                    <p style="background: rgba(145,46,49,0.05); padding: 15px; border-radius: 50px; display: inline-block;">
+                        <i class="fas fa-lightbulb" style="color: var(--primary);"></i> 
+                        <span data-en="We review all documents before submission to ensure accuracy." 
+                              data-ja="提出前にすべての書類をチェックし、正確性を確保します。">We review all documents before submission to ensure accuracy.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ETHICAL GUIDANCE NOTICE (prominent) -->
+        <section class="section" style="background: var(--bg-alt);">
+            <div class="container">
+                <div class="guidance-notice fade-up" style="background: rgba(145,46,49,0.08); border-left: 8px solid var(--primary); padding: 40px; border-radius: 30px; max-width: 900px; margin: 0 auto;">
+                    <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+                        <div style="font-size: 3.5rem; color: var(--primary);"><i class="fas fa-scale-balanced"></i></div>
+                        <div>
+                            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 2rem;" data-en="Our ethical promise" data-ja="誠実さのお約束">Our ethical promise</h3>
+                            <p style="font-size: 1.1rem; line-height: 1.7;"
+                               data-en="Momiji never guarantees visa approval – such promises are misleading and against our values. We provide expert preparation so you can submit the strongest possible application. Visa decisions are made solely by the Japanese Embassy."
+                               data-ja="Momijiはビザ承認を決して保証しません – そのような約束は誤解を招き、私たちの価値観に反します。私たちは、最善の申請ができるよう専門的な準備を提供します。ビザの決定は日本大使館のみが行います。">
+                               Momiji never guarantees visa approval – such promises are misleading and against our values. We provide expert preparation so you can submit the strongest possible application. Visa decisions are made solely by the Japanese Embassy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUCCESS STORIES (testimonials related to guidance) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Real stories" data-ja="実際の声">
+                        <i class="fas fa-comment-dots"></i> Real stories
+                    </span>
+                    <h2 class="section-title" data-en="Guidance that made a difference" data-ja="進路指導の体験談">Guidance that made a difference</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card fade-up">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p data-en="The document guidance at Momiji was incredibly detailed. They spotted a small error in my bank statement that could have caused a rejection. Now I'm in Tokyo!"
+                               data-ja="Momijiの書類指導は非常に細やかでした。銀行残高証明書の小さなミスを指摘してくれ、もし見逃していたら不許可になっていたかもしれません。今、東京にいます！">
+                               The document guidance at Momiji was incredibly detailed. They spotted a small error in my bank statement that could have caused a rejection. Now I'm in Tokyo!
+                            </p>
+                            <div class="testimonial-author">
+                                <strong data-en="Tanvir Hasan" data-ja="タンビル・ハサン">Tanvir Hasan</strong>
+                                <span data-en="Student at Tokyo Language Academy" data-ja="東京日本語アカデミー生">Student at Tokyo Language Academy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-up delay-1">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p data-en="I was nervous about the interview. The mock sessions with Sensei built my confidence – the actual interview felt familiar and I got my visa!"
+                               data-ja="面接がとても不安でした。先生との模擬面接で自信がつき、本番はリラックスして臨めました。無事ビザ取得！">
+                               I was nervous about the interview. The mock sessions with Sensei built my confidence – the actual interview felt familiar and I got my visa!
+                            </p>
+                            <div class="testimonial-author">
+                                <strong data-en="Jannatul Ferdous" data-ja="ジャンナトゥル・フェルドウス">Jannatul Ferdous</strong>
+                                <span data-en="Osaka bound, April 2025" data-ja="2025年4月大阪留学予定">Osaka bound, April 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (specific to guidance) -->
+        <section class="section theme-bg-alt">
+            <div class="container">
+                <div class="section-header fade-up">
+                    <span class="section-subtitle" data-en="Guidance FAQ" data-ja="進路指導Q&A">
+                        <i class="fas fa-circle-question"></i> Guidance FAQ
+                    </span>
+                    <h2 class="section-title" data-en="Common questions" data-ja="よくある質問">Common questions</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card fade-up" style="padding: 25px; margin-bottom: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="Do you charge for guidance?" data-ja="進路指導は有料ですか？">Do you charge for guidance?</h4>
+                        <p data-en="Initial consultation is free. If you enrol in our language course, basic guidance is included. For students who only need application support, we offer a separate fee – please contact us." 
+                           data-ja="初回相談は無料です。言語コースに在籍している方には基本ガイダンスは含まれます。出願のみのサポートを希望される方には別途料金がかかります。お問い合わせください。">Initial consultation is free. If you enrol in our language course, basic guidance is included. For students who only need application support, we offer a separate fee – please contact us.</p>
+                    </div>
+                    <div class="card fade-up delay-1" style="padding: 25px; margin-bottom: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="Which schools do you work with?" data-ja="提携している学校は？">Which schools do you work with?</h4>
+                        <p data-en="We have partnerships with over 20 accredited Japanese language schools in Tokyo, Osaka, Kyoto, Fukuoka, and more. We also assist with vocational college applications." 
+                           data-ja="東京、大阪、京都、福岡など、20以上の認定日本語学校と連携しています。専門学校への出願もサポートしています。">We have partnerships with over 20 accredited Japanese language schools in Tokyo, Osaka, Kyoto, Fukuoka, and more. We also assist with vocational college applications.</p>
+                    </div>
+                    <div class="card fade-up delay-2" style="padding: 25px; margin-bottom: 20px;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;" data-en="What if my visa is rejected?" data-ja="ビザが不許可になったら？">What if my visa is rejected?</h4>
+                        <p data-en="We review the reasons with you and help strengthen your next application. We do not charge extra for re‑application guidance within the same intake." 
+                           data-ja="不許可理由を一緒に確認し、次回の申請を強化します。同じ入学時期での再申請ガイダンスには追加料金はかかりません。">We review the reasons with you and help strengthen your next application. We do not charge extra for re‑application guidance within the same intake.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION (meet counselor) -->
+        <section class="section contact-cta" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white;">
+            <div class="container text-center">
+                <h2 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; color: white;" 
+                    data-en="Ready to plan your future?" data-ja="未来を計画しませんか？">Ready to plan your future?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;"
+                   data-en="Meet our guidance counselors for a free, no‑pressure discussion."
+                   data-ja="進路カウンセラーとの無料相談（義務は一切ありません）。">Meet our guidance counselors for a free, no‑pressure discussion.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-secondary btn-lg" style="background: white; color: var(--primary); border: none;" data-en="Book appointment" data-ja="予約する">
+                        <i class="fas fa-calendar-check"></i> Book appointment
+                    </a>
+                    <a href="https://wa.me/8801XXXXXXXXX" target="_blank" class="btn btn-primary btn-lg" style="background: transparent; border: 2px solid white; color: white;" data-en="WhatsApp us" data-ja="WhatsAppで問い合わせ">
+                        <i class="fab fa-whatsapp"></i> WhatsApp us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (exact same as other pages) -->
+    <footer>
+        <div style="height: 4px; background: linear-gradient(90deg, transparent, var(--primary), var(--accent), var(--primary), transparent); width: 100%;"></div>
+        <div class="container" style="padding: 60px 0 40px;">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo"><img src="assets/images/logo.png" alt="Momiji Logo"></div>
+                    <p data-en="Your trusted gateway to Japanese language education and Japan study opportunities." data-ja="日本語教育と日本留学への信頼できる架け橋。">Your trusted gateway to Japanese language education and Japan study opportunities.</p>
+                    <div style="display: flex; gap: 15px; margin-top: 20px;">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Quick Links" data-ja="クイックリンク"><i class="fas fa-link"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" data-en="About Us" data-ja="Momijiについて"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="courses.html" data-en="Courses" data-ja="コース"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="japan.html" data-en="Study in Japan" data-ja="日本留学"><i class="fas fa-chevron-right"></i> Study in Japan</a></li>
+                        <li><a href="guidance.html" data-en="Guidance" data-ja="進路指導"><i class="fas fa-chevron-right"></i> Guidance</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Contact" data-ja="お問い合わせ"><i class="fas fa-address-book"></i> Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-en="Dhaka, Bangladesh" data-ja="バングラデシュ、ダッカ">Dhaka, Bangladesh</span></p>
+                    <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@momiji.edu.bd</p>
+                    <p><i class="fas fa-globe"></i> www.momiji.edu.bd</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-en="Hours" data-ja="営業時間"><i class="fas fa-clock"></i> Hours</h4>
+                    <p><i class="far fa-clock"></i> <span data-en="10:00 AM – 6:00 PM" data-ja="午前10時～午後6時">10:00 AM – 6:00 PM</span></p>
+                    <p><i class="far fa-calendar"></i> <span data-en="Saturday - Thursday" data-ja="土曜日～木曜日">Saturday - Thursday</span></p>
+                    <p><i class="fas fa-hourglass-half"></i> <span data-en="Friday Closed" data-ja="金曜日休校">Friday Closed</span></p>
+                </div>
+            </div>
+            <div class="trust-badges">
+                <span><i class="fas fa-certificate"></i> <span data-en="Registered Institute" data-ja="登録機関">Registered Institute</span></span>
+                <span><i class="fas fa-language"></i> <span data-en="JLPT Preparation Center" data-ja="JLPT準備センター">JLPT Preparation Center</span></span>
+                <span><i class="fas fa-handshake"></i> <span data-en="Ethical Guidance" data-ja="倫理的指導">Ethical Guidance</span></span>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: none; padding-top: 20px;">
+                <div><p style="margin:0;"><i class="far fa-copyright"></i> <span data-en="2026 Momiji Japanese Language Academy. All rights reserved." data-ja="2026 Momiji Japanese Language Academy. All rights reserved.">2026 Momiji Japanese Language Academy. All rights reserved.</span></p></div>
+                <div>
+                    <a href="https://prodo.top" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none; font-size:0.9rem; display:flex; align-items:center; gap:5px;">
+                        <span data-en="Crafted by" data-ja="制作">Crafted by</span>
+                        <strong style="color: var(--primary);">ProDo</strong>
+                        <i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (shared) -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    <script>
+        // fade-up observer
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-up');
+            const appearOptions = { threshold: 0.2, rootMargin: '0px 0px -50px 0px' };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+        });
+    </script>
+    <!-- fallback for missing images -->
+    <style>
+        img[src=""], img:not([src]) { opacity:0; }
+    </style>
+</body>
+</html>
