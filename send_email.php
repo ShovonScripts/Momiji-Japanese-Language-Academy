@@ -160,7 +160,7 @@ Source: Website Contact Form
         $confirmationMail->Host = 'mail.momijiedu.com';
         $confirmationMail->SMTPAuth = true;
         $confirmationMail->Username = 'info@momijiedu.com';
-        $confirmationMail->Password = '';
+        $confirmationMail->Password = 'Pele@2468';
         $confirmationMail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $confirmationMail->Port = 465;
         $confirmationMail->CharSet = 'UTF-8';
