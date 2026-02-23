@@ -54,7 +54,7 @@ try {
     $mail->Host = 'mail.momijiedu.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'info@momijiedu.com';
-    $mail->Password = 'Pele@2468';
+    $mail->Password = '-';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port = 465;
 
